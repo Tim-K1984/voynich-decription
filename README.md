@@ -1,10 +1,10 @@
-# 🔍 Voynich Manuskript – Unsere Entschlüsselung
+# 🔍 Voynich Manuskript – Meine Entschlüsselung
 
 ![Voynich](docs/images/voynich_sample.jpg)
 
 ## 📜 Überblick
-Dies ist die offizielle Projektseite zu unserer Arbeit an der Entschlüsselung des mysteriösen **Voynich-Manuskripts**.  
-Unser Ziel: Den jahrhundertealten, unlesbaren Text in eine verständliche Sprache zu übertragen – mit einer Mischung aus linguistischer Analyse, Kryptografie und moderner Datenverarbeitung.
+Dies ist die offizielle Projektseite zu meiner Arbeit an der Entschlüsselung des mysteriösen **Voynich-Manuskripts**.  
+Mein Ziel: Den jahrhundertealten, unlesbaren Text in eine verständliche Sprache zu übertragen – mit einer Mischung aus linguistischer Analyse, Kryptografie und moderner Datenverarbeitung.
 
 ---
 
