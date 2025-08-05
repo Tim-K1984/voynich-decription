@@ -19,7 +19,7 @@ Details → [Methodology](docs/methodology.md)
 ---
 
 ## 📊 Ergebnisse
-- **~65 %** des Texts konnten wir bereits mit hoher Sicherheit übersetzen  
+- **~65 %** des Texts konnten bereits mit hoher Sicherheit übersetzen  
 - Themen: Kräuterheilkunde, Astronomie, und einige überraschende Inhalte  
 - Beispiele → [Results](docs/results.md)
 
