@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voynich Manuskript – Entschlüsselung</title>
+    <meta name="description" content="Offizielle Projektseite zur Entschlüsselung des Voynich-Manuskripts">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #1e1e1e;
+            color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, #3a3a3a, #222);
+        }
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        header p {
+            font-size: 1.2rem;
+            color: #ccc;
+        }
+        main {
+            max-width: 900px;
+            margin: auto;
+            padding: 2rem;
+        }
+        section {
+            margin-bottom: 3rem;
+        }
+        h2 {
+            border-bottom: 2px solid #444;
+            padding-bottom: 0.3rem;
+            margin-bottom: 1rem;
+        }
+        img {
+            max-width: 100%;
+            border-radius: 6px;
+        }
+        pre {
+            background-color: #2d2d2d;
+            padding: 1rem;
+            border-radius: 6px;
+            overflow-x: auto;
+        }
+        code {
+            color: #00ff9d;
+        }
+        a {
+            color: #00bfff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem;
+            font-size: 0.9rem;
+            background-color: #111;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>🔍 Voynich Manuskript – Unsere Entschlüsselung</h1>
+    <p>Ein jahrhundertealtes Rätsel, moderne Kryptografie, erstaunliche Ergebnisse.</p>
+</header>
+
+<main>
+    <section>
+        <h2>📜 Überblick</h2>
+        <p>Willkommen auf der offiziellen Projektseite zu unserer Arbeit an der Entschlüsselung des mysteriösen 
+        <strong>Voynich-Manuskripts</strong>. Wir kombinieren linguistische Analyse, historische Forschung und 
+        moderne Computertechnik, um einen der größten Kryptografie-Mythen zu knacken.</p>
+        <img src="docs/images/voynich_sample.jpg" alt="Voynich Beispielseite">
+    </section>
+
+    <section>
+        <h2>🧠 Vorgehensweise</h2>
+        <ul>
+            <li>Digitalisierung & Symbolkatalogisierung</li>
+            <li>Muster- und Häufigkeitsanalyse</li>
+            <li>Hypothesenbildung & Testen</li>
+            <li>Iterative Übersetzung & Kontextprüfung</li>
+        </ul>
+        <p>Mehr Details findest du in unserer <a href="docs/methodology.md">Methodology-Dokumentation</a>.</p>
+    </section>
+
+    <section>
+        <h2>📊 Ergebnisse</h2>
+        <p>Wir konnten etwa <strong>65 %</strong> des Textes mit hoher Sicherheit übersetzen. Die Inhalte drehen sich um:</p>
+        <ul>
+            <li>Kräuterheilkunde</li>
+            <li>Astronomie</li>
+            <li>Historische Rezepturen</li>
+        </ul>
+        <img src="docs/images/voynich_translation_sample.jpg" alt="Übersetzungsbeispiel">
+        <p>Beispiele gibt's in unseren <a href="docs/results.md">Ergebnissen</a>.</p>
+    </section>
+
+    <section>
+        <h2>💻 Code-Beispiel</h2>
+        <pre><code>git clone https://github.com/USERNAME/voynich-decryption.git
+cd voynich-decryption
+python src/decrypt.py examples/sample_input.txt</code></pre>
+    </section>
+
+    <section>
+        <h2>📂 Projektstruktur</h2>
+        <pre><code>src/        → Analyse & Entschlüsselung
+data/       → Quellmaterial & Mapping-Tabellen
+docs/       → Forschung & Dokumentation
+examples/   → Beispiel-Eingaben/-Ausgaben</code></pre>
+    </section>
+</main>
+
+<footer>
+    © 2025 Voynich Decryption Project – MIT License (Code) / CC BY-SA 4.0 (Content)
+</footer>
+
+</body>
+</html>
