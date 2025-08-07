@@ -1,201 +1,215 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Voynich-Manuskript – Entschlüsselung (Open Project)</title>
-    <meta name="description" content="Projektseite zur praktischen Entschlüsselung des Voynich-Manuskripts – Ansatz, Ergebnisse, Code." />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet" />
-    <style>
-        :root {
-            --bg: #121212;
-            --panel: #1b1b1b;
-            --ink: #f3f3f3;
-            --muted: #b9b9b9;
-            --accent: #00b7ff;
-            --accent2: #10e59b;
-        }
-        * {
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Roboto', sans-serif;
-            background: var(--bg);
-            color: var(--ink);
-            margin: 0;
-        }
-        header {
-            text-align: center;
-            padding: 2.5rem 1rem;
-            background: linear-gradient(135deg, #232323, #151515);
-        }
-        header h1 {
-            margin: 0 0 0.5rem;
-            font-size: clamp(2rem, 4vw, 2.8rem);
-        }
-        header p {
-            margin: 0;
-            color: var(--muted);
-        }
-        main {
-            max-width: 980px;
-            margin: auto;
-            padding: 2rem 1.25rem;
-        }
-        section {
-            background: var(--panel);
-            border: 1px solid #2a2a2a;
-            border-radius: 10px;
-            padding: 1.25rem;
-            margin: 1.25rem 0;
-        }
-        h2 {
-            margin: 0 0 0.75rem;
-            padding-bottom: 0.4rem;
-            border-bottom: 2px solid #2a2a2a;
-            font-size: 1.35rem;
-        }
-        p {
-            line-height: 1.6;
-            color: var(--ink);
-        }
-        ul {
-            margin: 0.5rem 0 0 1.2rem;
-            line-height: 1.6;
-        }
-        img {
-            max-width: 100%;
-            border-radius: 8px;
-            display: block;
-            margin: 0.75rem 0;
-        }
-        pre {
-            background: #0f0f0f;
-            padding: 1rem;
-            border-radius: 8px;
-            overflow-x: auto;
-        }
-        code {
-            color: var(--accent2);
-        }
-        a {
-            color: var(--accent);
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        .grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1rem;
-        }
-        @media (min-width: 800px) {
-            .grid {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-        footer {
-            text-align: center;
-            padding: 1rem;
-            color: var(--muted);
-            border-top: 1px solid #242424;
-        }
-        .pill {
-            display: inline-block;
-            padding: 0.25rem 0.6rem;
-            border: 1px solid #2a2a2a;
-            border-radius: 999px;
-            font-size: 0.85rem;
-            color: var(--muted);
-        }
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Voynich-Manuskript – Entschlüsselung (Open Project)</title>
+<meta name="description" content="Praktische Entschlüsselung des Voynich-Manuskripts – Methode, Ergebnisse & Open Source Code." />
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #121212;
+    --panel: #1b1b1b;
+    --ink: #f3f3f3;
+    --muted: #b9b9b9;
+    --accent: #00b7ff;
+    --accent2: #10e59b;
+  }
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Roboto', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    margin: 0;
+    line-height: 1.5;
+  }
+  header {
+    text-align: center;
+    padding: 3rem 1rem 2rem;
+    background: linear-gradient(135deg, #232323, #151515);
+  }
+  header h1 {
+    margin: 0 0 0.5rem;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+  }
+  header p {
+    margin: 0;
+    color: var(--muted);
+    font-weight: 300;
+  }
+  main {
+    max-width: 960px;
+    margin: auto;
+    padding: 2rem 1rem 4rem;
+  }
+  section {
+    background: var(--panel);
+    border: 1px solid #2a2a2a;
+    border-radius: 10px;
+    padding: 1.5rem 1.75rem;
+    margin: 1.5rem 0;
+  }
+  h2 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #2a2a2a;
+    font-size: 1.5rem;
+  }
+  h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+  p {
+    margin: 0.6rem 0;
+    color: var(--ink);
+  }
+  ul {
+    margin: 0.5rem 0 0 1.4rem;
+    padding: 0;
+    list-style-type: disc;
+  }
+  img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin: 1rem 0;
+    display: block;
+  }
+  pre {
+    background: #0f0f0f;
+    padding: 1rem;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-size: 0.9rem;
+  }
+  code {
+    color: var(--accent2);
+  }
+  a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  a:hover,
+  a:focus {
+    text-decoration: underline;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  @media (min-width: 800px) {
+    .grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  footer {
+    text-align: center;
+    padding: 1rem;
+    color: var(--muted);
+    border-top: 1px solid #242424;
+    font-size: 0.9rem;
+    font-style: italic;
+  }
+  .pill {
+    display: inline-block;
+    padding: 0.25rem 0.6rem;
+    border: 1px solid #2a2a2a;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    color: var(--muted);
+    user-select: none;
+  }
+</style>
 </head>
 <body>
 <header>
-    <h1>🔍 Voynich-Manuskript – Entschlüsselung</h1>
-    <p>Ein altes Rätsel. Klare Methode. Offener Code.</p>
+  <h1>🔍 Voynich-Manuskript – Entschlüsselung</h1>
+  <p>Ein altes Rätsel. Klare Methode. Offener Code.</p>
 </header>
 <main>
-    <section>
-        <h2>📜 Überblick</h2>
-        <p>Ich dokumentiere hier meinen praktischen Ansatz zur Entschlüsselung des <strong>Voynich-Manuskripts</strong>.
-            Kein Forschungskollektiv, kein PR-Team – nur eine saubere Methode, reproduzierbare Ergebnisse und
-            ein Repository, das jeder prüfen kann.</p>
-        <div class="grid">
-            <div>
-                <p class="pill">Status: laufende Arbeit</p>
-                <ul>
-                    <li>Transkription & Symbolinventar</li>
-                    <li>Häufigkeits- & Musteranalyse</li>
-                    <li>Substitution + Constraints</li>
-                    <li>Kontextvalidierung</li>
-                </ul>
-            </div>
-            <div>
-                <img src="docs/images/voynich_sample.jpg" alt="Voynich Beispielseite" />
-            </div>
-        </div>
-    </section>
-    <section>
-        <h2>🧠 Methode</h2>
-        <p>Der Workflow ist modular aufgebaut: von der Datenerhebung über statistische Modelle bis hin zur
-            iterativen Übersetzung mit Gegenprüfung im historischen Kontext. Die komplette Beschreibung liegt
-            in <a href="docs/methodology.md" target="_blank" rel="noopener noreferrer">docs/methodology.md</a>.</p>
-        <pre><code># Minimalbeispiel
-python src/decrypt.py examples/sample_input.txt</code></pre>
-    </section>
-    <section>
-        <h2>📊 Ergebnisse (Work-in-Progress)</h2>
-        <p>Aktuell sind etwa <strong>~65&nbsp;%</strong> des Materials stabil lesbar. Thematische Cluster:
-            Kräuterheilkunde, Astronomie, Rezepturen. Beispiele und Notizen unter
-            <a href="docs/results.md" target="_blank" rel="noopener noreferrer">docs/results.md</a>.</p>
-        <img src="docs/images/voynich_translation_sample.jpg" alt="Übersetzungsbeispiel" />
-    </section>
-    <section>
-        <h2>💻 Code & Struktur</h2>
-        <pre><code>git clone https://github.com/Tim-K1984/voynich-decryption.git
-cd voynich-decryption
-python src/decrypt.py examples/sample_input.txt</code></pre>
-        <pre><code>src/        → Analyse & Entschlüsselung
-<a href="data/" target="_blank" rel="noopener noreferrer" style="color: var(--accent); text-decoration: underline;">data/</a>       → Quellmaterial & Mapping-Tabellen
-<a href="docs/" target="_blank" rel="noopener noreferrer" style="color: var(--accent); text-decoration: underline;">docs/</a>       → Forschung & Dokumentation
-<a href="examples/" target="_blank" rel="noopener noreferrer" style="color: var(--accent); text-decoration: underline;">examples/</a>   → Beispiel I/O</code></pre>
-        <p>Mapping-Dateien sind schlank und nachvollziehbar gehalten. Änderungen erfolgen versioniert über PRs/Issues.</p>
-    </section>
-    <section>
-        <h2>🔍 Reproduzierbarkeit</h2>
+  <section>
+    <h2>📜 Überblick</h2>
+    <p>Hier dokumentiere ich meinen praktischen Ansatz zur Entschlüsselung des <strong>Voynich-Manuskripts</strong>. Kein Forschungskollektiv, kein PR-Team – nur saubere Methoden, reproduzierbare Ergebnisse und ein transparentes Repository.</p>
+    <div class="grid">
+      <div>
+        <p class="pill">Status: laufende Arbeit</p>
         <ul>
-            <li>Alle Skripte deterministisch, seeds fixiert (wo relevant).</li>
-            <li>Eingangsdatensätze und Mappings im Repo.</li>
-            <li>Jede Übersetzung wird mit Kontextquellen kommentiert (siehe <a href="docs/" target="_blank" rel="noopener noreferrer">docs/</a>).</li>
+          <li>Transkription & Symbolinventar</li>
+          <li>Häufigkeits- & Musteranalyse</li>
+          <li>Substitution & Constraints</li>
+          <li>Kontextvalidierung</li>
         </ul>
-    </section>
-    <section>
-        <h2>📬 Kontakt & Mitwirkung</h2>
-        <p>Fragen, Anregungen, Gegenbeweise? Immer her damit. Pull Requests willkommen –
-            die Verantwortung für Aussagen und Interpretation liegt aber bei mir.</p>
-        <p class="pill">Lizenz: MIT (Code) · CC BY-SA 4.0 (Inhalte)</p>
-    </section>
+      </div>
+      <div>
+        <img src="docs/images/voynich_sample.jpg" alt="Beispielseite aus dem Voynich-Manuskript" />
+      </div>
+    </div>
+  </section>
 
-    <section>
-        <h2>📝 Zusammenfassung</h2>
-        <p>Willkommen auf der offiziellen Projektseite meiner Arbeit an der Entschlüsselung des wohl rätselhaftesten Manuskripts der Welt: dem Voynich-Manuskript. Dieses über 600 Jahre alte Dokument ist seit Jahrhunderten ein Mysterium – kaum jemand konnte es wirklich lesen oder verstehen. Mein Ziel ist es, diesen jahrhundertealten, scheinbar unlesbaren Text in eine verständliche Sprache zu übertragen. Dafür kombiniere ich linguistische Analyse, Kryptografie, historische Forschung und moderne Datenverarbeitung.</p>
-        <p>Ich glaube, das Manuskript ist keine reine Fantasie oder ein Scherz – sondern eine komplexe Verschlüsselung einer mittelalterlichen Medizinsprache, die mit Pflanzenheilkunde, Astronomie und sogar Frauenheilkunde zu tun hat.</p>
-        <p>Mein Forschungsansatz läuft in mehreren Schritten ab:</p>
-        <ul>
-            <li><strong>Digitalisierung & Symbolkatalogisierung:</strong> Erfassung aller Voynich-Zeichen in maschinenlesbarer Form.</li>
-            <li><strong>Muster- und Häufigkeitsanalyse:</strong> Untersuchung der Verteilung von Zeichen und Wörtern zur Strukturfindung.</li>
-            <li><strong>Hypothesenbildung & Testen:</strong> Entwicklung von Übersetzungstheorien, die iterativ geprüft und angepasst werden.</li>
-            <li><strong>Iterative Übersetzung & Kontextprüfung:</strong> Schrittweise Übertragung und Validierung anhand historischer Quellen und botanischer Zuordnungen.</li>
-        </ul>
-        <p>Bis heute konnte ich etwa <strong>65 % des Textes mit hoher Sicherheit</strong> entschlüsseln. Die Hauptthemen des Manuskripts entpuppen sich als Kräuterheilkunde, Astronomie, Frauenheilkunde und weitere überraschende medizinische Inhalte.</p>
-        <p>Das Projekt steht für Transparenz und Nachvollziehbarkeit: Jeder kann meinen Code und die Daten prüfen, selbst mitwirken oder einfach nur in die faszinierende Welt eines jahrhundertealten Geheimnisses eintauchen.</p>
-        <p><em>„Jeder Code ist ein Rätsel, und jedes Rätsel wartet auf seinen Schlüssel.“</em></p>
-    </section>
-</main>
-<footer>
-    © 2025 – Voynich Decryption Project. Erstellt von einer Person mit Hilfe eines nicht-menschlichen Assistenten.
-</footer>
-</body>
-</html>
+  <section>
+    <h2>🧠 Methode</h2>
+    <p>Der Workflow ist modular aufgebaut: Von Datenerhebung über statistische Modelle bis hin zur iterativen Übersetzung und Kontextvalidierung. Details findest du in <a href="docs/methodology.md" target="_blank" rel="noopener noreferrer">docs/methodology.md</a>.</p>
+    <pre><code># Minimalbeispiel
+python src/decrypt.py examples/sample_input.txt
+    </code></pre>
+  </section>
+
+  <section>
+    <h2>📊 Ergebnisse (Work-in-Progress)</h2>
+    <p>Momentan sind etwa <strong>~65&nbsp;%</strong> des Materials stabil lesbar. Thematische Schwerpunkte: Kräuterheilkunde, Astronomie, Rezepturen. Mehr Beispiele in <a href="docs/results.md" target="_blank" rel="noopener noreferrer">docs/results.md</a>.</p>
+    <img src="docs/images/voynich_translation_sample.jpg" alt="Übersetzungsbeispiel" />
+  </section>
+
+  <section>
+    <h2>💻 Code & Struktur</h2>
+    <pre><code>git clone https://github.com/Tim-K1984/voynich-decryption.git
+cd voynich-decryption
+python src/decrypt.py examples/sample_input.txt
+    </code></pre>
+    <pre><code>src/      → Analyse & Entschlüsselung
+<a href="data/" target="_blank" rel="noopener noreferrer" style="color: var(--accent); text-decoration: underline;">data/</a>     → Quellmaterial & Mapping-Tabellen
+<a href="docs/" target="_blank" rel="noopener noreferrer" style="color: var(--accent); text-decoration: underline;">docs/</a>     → Forschung & Dokumentation
+<a href="examples/" target="_blank" rel="noopener noreferrer" style="color: var(--accent); text-decoration: underline;">examples/</a> → Beispiel I/O
+    </code></pre>
+    <p>Mapping-Dateien sind schlank, Änderungen versioniert via PRs/Issues.</p>
+  </section>
+
+  <section>
+    <h2>🔍 Reproduzierbarkeit</h2>
+    <ul>
+      <li>Deterministische Skripte mit fixierten Seeds</li>
+      <li>Alle Daten und Mappings im Repo</li>
+      <li>Jede Übersetzung kommentiert mit Original und Kontext (siehe <a href="docs/" target="_blank" rel="noopener noreferrer">docs/</a>)</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>📬 Kontakt & Mitwirkung</h2>
+    <p>Fragen, Anregungen, Gegenbeweise? Immer her damit. Pull Requests sind willkommen, aber die Verantwortung liegt bei mir.</p>
+    <p class="pill">Lizenz: MIT (Code) · CC BY-SA 4.0 (Inhalte)</p>
+  </section>
+
+  <section>
+    <h2>📖 Wie das Ganze begann</h2>
+    <p>Das Voynich-Manuskript ist DAS Kryptografie-Mysterium schlechthin – seit Jahrhunderten unentziffert. Das hat mich neugierig gemacht. Also habe ich mich rangehauen mit klarem Plan und Nerd-Power.</p>
+
+    <h3>Mein Ansatz</h3>
+    <p>Erst alle Zeichen digital katalogisiert (EVA-Alphabet), dann mit Häufigkeitsanalysen, Mustererkennung & Modellen getestet, ob es eine echte Sprache oder ein Code ist. Spoiler: Ist es.</p>
+    <p>Mit Substitutionshypothesen, Constraints und historisch-medizinischem Kontext habe ich eine Methode entwickelt, die echte Übersetzungen zulässt.</p>
+
+    <h3>Die Umsetzung im Detail</h3>
+    <ul>
+      <li><strong>Datenerhebung & Vorverarbeitung:</strong> EVA-Transkriptionen aus Stolfi/Landini-Archiv, maschinenlesbar aufbereitet</li>
+      <li><strong>Analyse:</strong> Python-Skripte für Zeichenhäufigkeiten, Muster & stochastische Modelle</li>
+      <li><strong>Übersetzung:</strong> Iterativ, mit eigenem Mapping, validiert mit historischen Quellen</li>
+      <li><strong>Dokumentation:</strong> Jede Übersetzung mit Kontext und Quelle transparent dokumentiert</li>
+    </ul>
+    <p>Außerdem rekonstruierte ich Rezepte (z.B. gegen Magenschwäche) und überprüfte Pflanzenwirkungen – ein Ausflug in mittelalterliche Naturheilkunde.</p>
+
+    <h3>Ergebnisse</h3>
+    <ul>
+      <li>~65 % des Text
