@@ -1,62 +1,68 @@
-# 🔍 Voynich Manuskript – Meine Entschlüsselung
+Voynich Manuskript – Meine Entschlüsselung
+Voynich
 
-![Voynich](docs/images/voynich_sample.jpg)
+📜 Überblick
+Willkommen auf der offiziellen Projektseite meiner Arbeit an der Entschlüsselung des wohl rätselhaftesten Manuskripts der Welt: dem Voynich-Manuskript. Dieses über 600 Jahre alte Dokument ist seit Jahrhunderten ein Mysterium – kaum jemand konnte es wirklich lesen oder verstehen. Mein Ziel ist es, diesen jahrhundertealten, scheinbar unlesbaren Text in eine verständliche Sprache zu übertragen. Dafür kombiniere ich linguistische Analyse, Kryptografie, historische Forschung und moderne Datenverarbeitung.
 
-## 📜 Überblick
-Dies ist die offizielle Projektseite zu meiner Arbeit an der Entschlüsselung des mysteriösen **Voynich-Manuskripts**.  
-Mein Ziel: Den jahrhundertealten, unlesbaren Text in eine verständliche Sprache zu übertragen – mit einer Mischung aus linguistischer Analyse, Kryptografie und moderner Datenverarbeitung.
+Ich glaube, das Manuskript ist keine reine Fantasie oder ein Scherz – sondern eine komplexe Verschlüsselung einer mittelalterlichen Medizinsprache, die mit Pflanzenheilkunde, Astronomie und sogar Frauenheilkunde zu tun hat.
 
----
+🧠 Vorgehensweise
+Mein Forschungsansatz läuft in mehreren Schritten ab:
 
-## 🧠 Vorgehensweise
-- **Schritt 1:** Digitalisierung & Symbolkatalogisierung  
-- **Schritt 2:** Muster- und Häufigkeitsanalyse  
-- **Schritt 3:** Hypothesenbildung & Testen  
-- **Schritt 4:** Iterative Übersetzung & Kontextprüfung
+Digitalisierung & Symbolkatalogisierung
+Ich beginne mit der genauen Erfassung der Voynich-Schriftzeichen in maschinenlesbarer Form (EVA-Transkription). Dabei entsteht ein umfassendes Symbolverzeichnis.
 
-Details → [Methodology](docs/methodology.md)
+Muster- und Häufigkeitsanalyse
+Anschließend analysiere ich die Häufigkeit und Verteilung der Zeichen, Cluster und Wörter, um die Struktur des Textes besser zu verstehen.
 
----
+Hypothesenbildung & Testen
+Auf Basis historischer Quellen und linguistischer Annahmen forme ich Übersetzungshypothesen, die ich iterativ teste und anpasse.
 
-## 📊 Ergebnisse
-- **~65 %** des Texts konnten bereits mit hoher Sicherheit übersetzt werden
-- Themen: Kräuterheilkunde, Astronomie, und einige überraschende Inhalte  
-- Beispiele → [Results](docs/results.md)
+Iterative Übersetzung & Kontextprüfung
+Schritt für Schritt übersetze ich Abschnitte, überprüfe den Kontext – insbesondere botanische und astronomische Referenzen – und verfeinere das Modell.
 
----
+Genaueres zu den Methoden gibt’s in meinem Dokumentationsbereich → Methodology.
 
-## 💻 Nutzung
-```bash
-# Installation
-git clone https://github.com/USERNAME/voynich-decryption.git
-cd voynich-decryption
-pip install -r requirements.txt
+📊 Ergebnisse
+Bis heute konnte ich etwa 65 % des Texts mit hoher Sicherheit entschlüsseln. Die Hauptthemen des Manuskripts entpuppen sich als:
 
-# Entschlüsselung starten
-python src/decrypt.py data/sample_input.txt
-```
+Kräuterheilkunde: Viele Rezepte sind mit mittelalterlichen Pflanzen identifizierbar (z.B. Wermut, Fenchel, Ringelblume).
 
----
+Astronomische Zuordnungen: Sternbilder und Planeten spielen eine wichtige Rolle im Zusammenhang mit Heilmitteln.
 
-## 🗂 Dateistruktur
-```text
-src/        → Code für Analyse & Entschlüsselung
-data/       → Quellmaterial & Mapping-Tabellen
-docs/       → Forschung & Dokumentation
-examples/   → Beispiel-Eingaben/-Ausgaben
-```
+Frauenheilkunde: Passagen über Schwangerschaft, Gebärmutter und Gesundheit von Frauen sind zu finden.
 
----
+Überraschende Inhalte: Einige Texte scheinen Stimmungs- oder Schlafbeschwerden zu adressieren.
 
-## 🤝 Mitwirken
-Pull Requests, Issues und Vorschläge sind willkommen!  
-Bitte beachte unsere [Contribution Guidelines](CONTRIBUTING.md).
+Beispiele und konkrete Übersetzungen findest du unter → Results.
 
----
+💻 Nutzung
+Installation
+bash
+Kopieren
+Bearbeiten
+git clone https://github.com/USERNAME/voynich-decryption.git  
+cd voynich-decryption  
+pip install -r requirements.txt  
+Entschlüsselung starten
+bash
+Kopieren
+Bearbeiten
+python src/decrypt.py data/sample_input.txt  
+🗂 Dateistruktur
+src/ → Code für Analyse & Entschlüsselung
 
-## 📜 Lizenz
-Dieses Projekt steht unter der **MIT-Lizenz** (Code) und **CC BY-SA 4.0** (Inhalte).
+data/ → Quellmaterial & Mapping-Tabellen
 
----
+docs/ → Forschung & Dokumentation
 
-*„Jeder Code ist ein Rätsel, und jedes Rätsel wartet auf seinen Schlüssel.“*
+examples/ → Beispiel-Eingaben/-Ausgaben
+
+🤝 Mitwirken
+Pull Requests, Issues und Vorschläge sind jederzeit willkommen!
+Bitte schaut vorher in die Contribution Guidelines rein.
+
+📜 Lizenz
+Dieses Projekt steht unter der MIT-Lizenz (Code) und Creative Commons BY-SA 4.0 (Inhalte).
+
+„Jeder Code ist ein Rätsel, und jedes Rätsel wartet auf seinen Schlüssel.“
